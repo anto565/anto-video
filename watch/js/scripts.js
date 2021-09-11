@@ -1650,3 +1650,19 @@
     }
     return B(ri), m(ri), { Alert: R, Button: W, Carousel: Z, Collapse: et, Dropdown: Te, Modal: Pe, Offcanvas: He, Popover: Ze, ScrollSpy: ii, Tab: ni, Toast: ri, Tooltip: Xe }
 }));
+
+
+
+
+// タップを検出したら...
+button.addEventListener('touchstart', () => {
+    audio.muted = true; // ミュート有効
+    audio.play(); // 動画再生
+    audio.pause(); // 動画停止
+    audio.muted = false; // ミュート無効
+    audio.currentTime = 0; // 開始秒数を戻す
+});
+// マーカー認識されたら...
+marker.addEventListener('markerFound', () => {
+    audio.play(); // 動画再生
+});
